@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <title>Серверные таблицы</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="/js/post.js"></script>
+    </head>
+    <body>
+        <header>
+            Рассмотрение работы клиентской части интернет-приложения
+        </header>
+        <nav>
+            <ul>
+                <li><a href="firstPage.html">О себе</a></li>
+                <li><a href="secondPage.html">Индивидуальное задание</a></li>
+                <li><a href="thirdPage.html">Работа с серверными таблицами</a></li>
+            </ul>
+        </nav>
+        <div class="content" id="thirdPage" th:if="${not #lists.isEmpty(nodes)}">
+            <table>
+                <thead>
+                <tr>
+                    <th class="table-cell" style="width: 5%;">Id</th>
+                    <th class="table-cell" style="width: 25%;">Name</th>
+                    <th class="table-cell" style="width: 25%;">Country</th>
+                    <th class="table-cell" style="width: 25%;">Status</th>
+                    <th class="table-cell" style="width: 5%;">Edit</th>
+                    <th class="table-cell" style="width: 5%;">Delete</th>
+                    <th class="table-cell" style="width: 5%;"><a th:href="@{/new}"><i class="fas fa-plus" style="font-size: 20px"></i></a></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="node : ${nodes}">
+                    <td class="table-cell" th:text="${node.getId()}">Id</td>
+                    <td class="table-cell" th:text="${node.getName()}">Name</td>
+                    <td class="table-cell" th:text="${node.getCountry()}">Country</td>
+                    <td class="table-cell" th:text="${node.getStatus()}">Status</td>
+                    <td class="table-cell"><a th:href="@{'/edit/{id}'(id=${node.getId()})}"><i class="fa fa-edit" style="font-size: 20px"></i></a></td>
+                    <td class="table-cell"><a th:href="@{'/delete/{id}'(id=${node.getId()})}"><i class="fa fa-trash" style="font-size: 20px"></i></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

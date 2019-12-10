@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <form class="form-horizontal" th:action="@{/save}" name="input_form" id="input_form"
+          method="post" role="form">
+        <p>
+            <label>
+                Введите имя:
+                <input type="text" th:name="name" placeholder="Введите имя сервера" maxlength="50"/>
+            </label>
+        </p>
+        <p>
+            <label>
+                Введите страну:
+                <input type="text" th:name="country" placeholder="Введите страну сервера" maxlength="50"/>
+            </label>
+        </p>
+        <p>
+            <label>
+                Введите статус:
+                <input type="text" th:name="status" placeholder="Введите статус сервера" maxlength="5"/>
+            </label>
+        </p>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+</body>
+</html>

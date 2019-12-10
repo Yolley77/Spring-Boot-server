@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Индивидуальное задание</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="/js/post.js"></script>
+    </head>
+    <body>
+        <header>
+            Рассмотрение работы клиентской части интернет-приложения
+        </header>
+        <nav>
+            <ul>
+                <li><a href="firstPage.html">О себе</a></li>
+                <li><a href="secondPage.html">Индивидуальное задание</a></li>
+                <li><a href="thirdPage.html">Работа с серверными таблицами</a></li>
+            </ul>
+        </nav>
+        <div class="content" id="secondPage">
+            <form th:action="@{/calculate}" method="post" role="form">
+                <p>
+                    <label>
+                        Введите данные:
+                        <input type="text" th:name="request" name="request" id="request"><br>
+                    </label>
+                </p>
+                <p>
+                    <button type="submit">Отправить</button>
+                </p>
+
+                <p>
+                    <label for="result">Результат:</label>
+                    <output name="result" id="result" th:text="${result}"></output>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

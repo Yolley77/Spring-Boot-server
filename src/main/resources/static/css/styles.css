@@ -1,0 +1,47 @@
+header footer nav {
+    display: block;
+}
+html {
+    background: linear-gradient(90deg, rgb(255, 172, 48), rgb(224, 128, 243), rgb(135, 234, 241));
+    /*background: linear-gradient(-90deg,  rgb(245, 189, 106), rgb(166, 240, 245));*/
+}
+
+header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18pt;
+}
+
+body nav {
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul a {
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16pt;
+}
+
+nav ul a:hover {
+    background-color: indigo;
+    color: lightgray;
+}
+
+#firstPageText {
+    font-size: 14pt;
+}
+
+.table-cell {
+    border: 1px solid #000000;
+}
+
+#thirdPage table {
+    text-align: center;
+}
